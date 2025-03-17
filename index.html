@@ -1,232 +1,341 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Personal Portfolio Website</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/7885cbf340.js" crossorigin="anonymous"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7885cbf340.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-    <body>
+  <body>
     <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/file.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fas fa-times" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Web Developer</p>
-                <h1>Hi, I'm <span>Amir</span><br>Khabaza From California </h1>
-            </div>
+      <div class="container">
+        <nav>
+          <img src="images/file.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Web Developer</p>
+          <h1>Hi, I'm <span>Amir</span><br />Khabaza From California</h1>
         </div>
+      </div>
     </div>
-<!-- -----------------about------------- -->
+    <!-- -----------------about------------- -->
     <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/AmirKhabaza2.png">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>As a first-generation immigrant, I bring a unique perspective and unwavering determination
-                         to the field of web development. My journey has been fueled by a deep passion for creating
-                          innovative solutions that can transform lives. Over the years, I've gained valuable experi
-                          ence and honed my skills, which have only strengthened my ambition to make a lasting impact 
-                          in web development. I'm constantly seeking new challenges and opportunities to grow, and I 
-                          thrive on collaborating with others to bring ideas to life. Let's connect and explore how we
-                           can make a difference together!</p>
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/AmirKhabaza2.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              As a first-generation immigrant, I bring a unique perspective and
+              unwavering determination to the field of web development. My
+              journey has been fueled by a deep passion for creating innovative
+              solutions that can transform lives. Over the years, I've gained
+              valuable experience and honed my skills, which have only
+              strengthened my ambition to make a lasting impact in web
+              development. I'm constantly seeking new challenges and
+              opportunities to grow, and I thrive on collaborating with others
+              to bring ideas to life. Let's connect and explore how we can make
+              a difference together!
+            </p>
 
-                         <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                            <p class="tab-links" onclick="opentab('education')">Education</p>
-                         </div>
-                         <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                                <li><span>Web Development</span><br>Web app Development</li>
-                                <li><span>App Development</span><br>Building Android/iOS apps</li>
-                                <li><span>AI and Machine Learning</span><br>Developing AI models and algorithms</li>
-
-                            </ul>
-                         </div>
-                         <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>2024 - Current</span><br>Web3 Security Data Analytics Extern at Webacy.</li>
-                                <li><span>2024</span><br>Accelerator Participant at AI4ALL.</li>
-                                <li><span>2023</span><br>Multimedia Graphic Design Intern at EPACENTER.</li>
-                                <li><span>2019 - 2020</span><br>UI/UX Designer at College Track.</li>
-                                <!-- <li><span>2016 - 2017</span><br>Internship at ekart eCommerce.</li> -->
-                            </ul>
-                         </div>
-                         <div class="tab-contents" id="education">
-                            <ul>
-                                <li><span>2023 - Current</span><br>BS from University of California, Merced</li>
-                                <li><span>2023</span><br>HSDIP from Menlo Atherton High School.</li>
-                                <!-- <li><span>2014</span><br>BBA from ISM Bangalore.</li> -->
-
-                            </ul>
-                         </div>
-                </div>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
             </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
+                <li><span>Web Development</span><br />Web app Development</li>
+                <li>
+                  <span>App Development</span><br />Building Android/iOS apps
+                </li>
+                <li>
+                  <span>AI and Machine Learning</span><br />Developing AI models
+                  and algorithms
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2024 - Current</span><br />Web3 Security Data Analytics
+                  Extern at Webacy.
+                </li>
+                <li>
+                  <span>2024</span><br />Accelerator Participant at AI4ALL.
+                </li>
+                <li>
+                  <span>2023</span><br />Multimedia Graphic Design Intern at
+                  EPACENTER.
+                </li>
+                <li>
+                  <span>2019 - 2020</span><br />UI/UX Designer at College Track.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2023 - Current</span><br />BS from University of
+                  California, Merced
+                </li>
+                <li>
+                  <span>2023</span><br />HSDIP from Menlo Atherton High School.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- -------------------Services------------------------ -->
     <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i> 
-                    <h2>Web Design</h2>
-                    <p>The current website :-)</p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div> 
-                    <i class="fa-solid fa-crop"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>Future Comfort App: Designed and developed a user-centric app focused on enhancing
-                         user experience through intuitive UI/UX design. The app provides a seamless interface,
-                          making it easy for users to navigate and interact.</p>
-                    <a href="https://drive.google.com/drive/folders/130xfXEoR5TJPqZ0c0Ne_9lTEn4YGvVzf?usp=sharing">Learn more</a>
-                </div>
-                <div> 
-                    <i class="fa-solid fa-camera-retro"></i>
-                    <h2>Multimedia Design</h2>
-                    <p>EPACENTER Blog Project: Designed and developed a dynamic blog to promote EPACENTER's 
-                        mission and activities. Focused on creating a visually appealing layout and engaging
-                         content to attract and retain readers.</p>
-                    <a href="https://drive.google.com/drive/folders/14dbTIKhFvzMBFp5HH2byb-hQgK173V8N?usp=sharing">Learn more</a>
-                </div>
-            </div>
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>The current website :-)</p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-crop"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              Future Comfort App: Designed and developed a user-centric app
+              focused on enhancing user experience through intuitive UI/UX
+              design. The app provides a seamless interface, making it easy for
+              users to navigate and interact.
+            </p>
+            <a
+              href="https://drive.google.com/drive/folders/130xfXEoR5TJPqZ0c0Ne_9lTEn4YGvVzf?usp=sharing"
+              >Learn more</a
+            >
+          </div>
+          <div>
+            <i class="fa-solid fa-camera-retro"></i>
+            <h2>Multimedia Design</h2>
+            <p>
+              EPACENTER Blog Project: Designed and developed a dynamic blog to
+              promote EPACENTER's mission and activities. Focused on creating a
+              visually appealing layout and engaging content to attract and
+              retain readers.
+            </p>
+            <a
+              href="https://drive.google.com/drive/folders/14dbTIKhFvzMBFp5HH2byb-hQgK173V8N?usp=sharing"
+              >Learn more</a
+            >
+          </div>
         </div>
+      </div>
     </div>
-<!-- ------------portfolio----------------> 
-<div id="portfolio">
-    <div class="container">
+    <!-- ------------portfolio---------------->
+    <div id="portfolio">
+      <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
-            <div class="work">
-                <img src="images/work-1.png">
-                <div class="layer">
-                    <h3>Weather App</h3>
-                    <p>The app provides you with real-time weather updates for any location around the world.
-                         Visit the website for more information.</p>
-                    <a href="https://amirkhabaza.github.io/Weather-App/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Weather App</h3>
+              <p>
+                The app provides you with real-time weather updates for any
+                location around the world. Visit the website for more
+                information.
+              </p>
+              <a href="https://amirkhabaza.github.io/Weather-App/"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
-            <div class="work">
-                <img src="images/work-2.png">
-                <div class="layer">
-                    <h3>To-Do List App</h3>
-                    <p>The app helps you manage your tasks efficiently and stay organized. 
-                        Visit the website for more information.</p>
-                    <a href="https://amirkhabaza.github.io/To-Do-List/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>To-Do List App</h3>
+              <p>
+                The app helps you manage your tasks efficiently and stay
+                organized. Visit the website for more information.
+              </p>
+              <a href="https://amirkhabaza.github.io/To-Do-List/"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
-            <div class="work">
-                <img src="images/work-3.png">
-                <div class="layer">
-                    <h3>Online Shopping App</h3>
-                    <p>The app connects you to the talented people around the world.
-                    Download it from play store.</p>
-                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>
+                The app connects you to the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
             </div>
+          </div>
         </div>
         <a href="#" class="btn">See more</a>
+      </div>
     </div>
-</div>
 
-
-<!-- ----------------------contact---------------- -->
-<div id="contact">
-    <div class="container">
+    <!-- ----------------------contact---------------- -->
+    <div id="contact">
+      <div class="container">
         <div class="row">
-            <div class="contact-left">
-                <h1 class = "sub-title">Contact Me</h1>
-                <p><i class ="fas fa-paper-plane"></i> amirkhabaza@gmail.com</p>
-                <p><i class ="fas fa-phone-square-alt"></i> (650)-353-8009</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=100008708173010"><i class="fab fa-facebook"></i></a>
-                    <a href="https://x.com/Amir_Khabaza"><i class="fab fa-twitter-square"></i></a>
-                    <a href="https://www.instagram.com/amir.khabaza"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/mohammedamirkhabaza"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <a href="images/Amir Khabaza_Resume.pdf" download class="btn btn2">Download CV</a>
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fas fa-paper-plane"></i> amirkhabaza@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i> (650)-353-8009</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=100008708173010"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://x.com/Amir_Khabaza"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="https://www.instagram.com/amir.khabaza"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/mohammedamirkhabaza"
+                ><i class="fab fa-linkedin"></i
+              ></a>
             </div>
-            <div class="contact-right">
-                <form name ="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
+            <a href="images/Amir Khabaza_Resume.pdf" download class="btn btn2"
+              >Download CV</a
+            >
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit" class="btn btn2" id="submit-btn">
+                <span id="btn-text">Submit</span>
+                <span id="btn-spinner" class="spinner"></span>
+              </button>
+            </form>
+            <span id="msg"></span>
+          </div>
         </div>
+      </div>
+      <div class="copyright">
+        <p>
+          Copyright © Amir. Made with <i class="fa-solid fa-heart"></i> by
+          Mohammed A Khabaza
+        </p>
+      </div>
     </div>
-    <div class="copyright">
-        <p>Copyright © Amir. Made with <i class="fa-solid fa-heart"></i> by Mohammed A Khabaza</p>
-    </div>
-</div>
-
 
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
         }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
     </script>
 
     <script>
+      var sidemenu = document.getElementById("sidemenu");
 
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemenu.style.right = "0"
-        }
-        function closemenu(){
-            sidemenu.style.right = "-200px"
-        }
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
     </script>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxZ9OSiD0lUkjse3OqdsHJhPNgow2OXLPf7HcYnty7-oJwAAv4LRKemh_IILeutvIPadQ/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },3000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
-    </body>
-    </html>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxZ9OSiD0lUkjse3OqdsHJhPNgow2OXLPf7HcYnty7-oJwAAv4LRKemh_IILeutvIPadQ/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      const submitBtn = document.getElementById("submit-btn");
+      const btnText = document.getElementById("btn-text");
+      const btnSpinner = document.getElementById("btn-spinner");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the form from submitting immediately
+
+        // Disable the button and show the spinner
+        submitBtn.disabled = true;
+        btnText.textContent = "Sending...";
+        btnSpinner.classList.add("active");
+
+        // Validate the form fields
+        const name = form.elements["Name"].value.trim();
+        const email = form.elements["Email"].value.trim();
+        const message = form.elements["Message"].value.trim();
+
+        if (name === "" || email === "" || message === "") {
+          alert("Please fill out all fields.");
+          submitBtn.disabled = false;
+          btnText.textContent = "Submit";
+          btnSpinner.classList.remove("active");
+          return;
+        }
+
+        // Submit the form data
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            msg.style.color = "#61b752"; // Green color for success
+            form.reset(); // Clear the form after submission
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            msg.innerHTML = "An error occurred. Please try again.";
+            msg.style.color = "#ff004f"; // Red color for error
+          })
+          .finally(() => {
+            // Re-enable the button and hide the spinner
+            submitBtn.disabled = false;
+            btnText.textContent = "Submit";
+            btnSpinner.classList.remove("active");
+          });
+      });
+    </script>
+  </body>
+</html>
