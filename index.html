@@ -1,29 +1,1037 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Site Under Maintenance</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      flex-direction: column;
-    }
-    h1 {
-      font-size: 3em;
-      color: #ff004f;
-    }
-  </style>
-</head>
-<body>
-  <h1>We'll be back soon!</h1>
-  <p>Our site is currently undergoing scheduled maintenance.<br>Please check back later.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Amir Khabaza - Computer Science & Engineering student at UC Merced. Portfolio showcasing projects, experience, and skills in AI, machine learning, and full-stack development." />
+    <meta name="keywords" content="Amir Khabaza, Computer Science, UC Merced, Portfolio, Web Developer, AI, Machine Learning, Full Stack Developer" />
+    <meta name="author" content="Amir Khabaza" />
+    <title>Amir Khabaza - Computer Science & Engineering | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7885cbf340.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Animated Background Elements -->
+    <div class="animated-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="gradient-orb orb-4"></div>
+    </div>
+    
+    <!-- Animated Mesh Gradient Background -->
+    <canvas id="mesh-gradient"></canvas>
+    
+    <!-- Floating Geometric Shapes -->
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    
+    <!-- Floating Particles -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Three.js Interactive 3D Scene -->
+    <div id="threejs-container"></div>
+
+    <div id="header">
+      <div class="container">
+        <nav class="glass-nav">
+          <div class="logo">
+            <span class="logo-text">AK</span>
+          </div>
+          <ul id="sidemenu">
+            <li><a href="#header" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text fade-in">
+          <p class="subtitle-animated">
+            <span class="typing-text">Computer Science & Engineering</span>
+            <span class="cursor">|</span>
+          </p>
+          <h1>
+            <span class="greeting">Hi, I'm</span>
+            <span class="gradient-text name-animated">Amir Khabaza</span>
+          </h1>
+          <p class="header-description">
+            Building innovative solutions through <span class="highlight">AI</span>, 
+            <span class="highlight">machine learning</span>, and 
+            <span class="highlight">full-stack development</span>
+          </p>
+          <div class="header-buttons">
+            <a href="#projects" class="btn-primary">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <span>Get In Touch</span>
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+          
+          <!-- Quick Stats -->
+          <div class="quick-stats fade-in-up" style="animation-delay: 0.5s">
+            <div class="stat-item">
+              <div class="stat-number" data-target="3">0</div>
+              <div class="stat-label">Hackathon Wins</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="12">0</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="2">0</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          
+          <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="mouse">
+              <div class="wheel"></div>
+            </div>
+          </div>
+          
+          <!-- Interactive Hint -->
+          <div class="interactive-hint fade-in-up" style="animation-delay: 0.6s">
+            <i class="fa-solid fa-hand-pointer"></i>
+            <span>Move your mouse to interact with the 3D scene!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Eye-Catching Banner -->
+    <div class="attention-banner">
+      <div class="banner-content">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Winner of Multiple Hackathons • Building AI Solutions • Available for Opportunities</span>
+        <i class="fa-solid fa-sparkles"></i>
+      </div>
+    </div>
+    <!-- -----------------about------------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1 fade-in-left">
+            <div class="image-wrapper">
+              <div class="image-border"></div>
+              <img src="images/AmirKhabaza2.png" />
+              <div class="image-glow"></div>
+              <div class="floating-badge">
+                <i class="fa-solid fa-code"></i>
+                <span>Developer</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-col-2 fade-in-right">
+            <h1 class="sub-title">
+              <span class="section-number">01.</span> About Me
+            </h1>
+            <p class="about-description">
+              As a first-generation immigrant, I bring a unique perspective and
+              unwavering determination to the field of web development. My
+              journey has been fueled by a deep passion for creating innovative
+              solutions that can transform lives. Over the years, I've gained
+              valuable experience and honed my skills, which have only
+              strengthened my ambition to make a lasting impact in web
+              development. I'm constantly seeking new challenges and
+              opportunities to grow, and I thrive on collaborating with others
+              to bring ideas to life. Let's connect and explore how we can make
+              a difference together!
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h3>Technical Skills</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">JavaScript/TypeScript</span>
+                    <span class="skill-tag">Ruby</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">OOP</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Perforce</span>
+                    <span class="skill-tag">Verilog</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">DirectX</span>
+                    <span class="skill-tag">OpenGL</span>
+                    <span class="skill-tag">Vulkan</span>
+                    <span class="skill-tag">CUDA</span>
+                    <span class="skill-tag">OpenCL</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3>Essential Skills</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Problem-Solving</span>
+                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag">Time Management</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3>Certifications</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">LinkedIn JavaScript Essential Training</span>
+                    <span class="skill-tag">Learning Python</span>
+                    <span class="skill-tag">What Is Web3?</span>
+                    <span class="skill-tag">Microsoft Cloud for Sustainability</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Jan 2024 – Mar 2025</span><br />
+                  <strong>AI4ALL</strong> — Undergraduate Research Intern<br />
+                  Developed predictive models for medical imaging and brain tumor detection, enhancing accuracy through machine learning and neural networks. Gained professional project experience and explored AI ethics, biases, and fair AI use.
+                </li>
+                <li>
+                  <span>Jul 2024 – Jan 2025</span><br />
+                  <strong>Webacy</strong> — Web3 Security Data Analytics Intern<br />
+                  Analyzed blockchain transaction patterns for fraud detection and developed machine learning models for smart contract risk assessment. Participated in workshops on DeFi security and blockchain vulnerability.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2023 – May 2026 (Expected)</span><br />
+                  <strong>UC Merced</strong> — B.S. in Computer Science & Engineering<br />
+                  GPA: 3.83<br />
+                  <em>Relevant Coursework:</em> Data structures, Algorithms, Stats & Probability, Boolean Algebra, Discrete Mathematics<br />
+                  <em>Affiliations/Honors:</em> College Track East Palo Alto (2022-Present), CSF Member (2023-Present), 10,000 Degrees Scholarship (2023-Present), PCF Scholarship (2023-Present)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -------------------Projects------------------------ -->
+    <div id="projects">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h1 class="sub-title">
+            <span class="section-number">02.</span> Featured Projects
+          </h1>
+          <p class="section-subtitle">Innovative solutions that make a difference</p>
+        </div>
+        <div class="projects-list">
+          <div class="project-card fade-in-up" style="animation-delay: 0.1s">
+            <div class="project-badge winner-badge">
+              <i class="fa-solid fa-trophy"></i>
+              Winner • HackDavis 2025
+            </div>
+            <div class="project-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h2>EthicScope</h2>
+            <p class="project-role">Founding Team Member • April 2025 - Present</p>
+            <p class="project-description">
+              Built a mobile and web app to scan product barcodes and provide ethical risk insights with interactive supply chain maps and greenwashing detection. Developed backend with Flask, MongoDB, Cerebras, and Tavily; frontend using Next.js, React, and Tailwind CSS.
+            </p>
+            <div class="project-tech">
+              <span>Flask</span>
+              <span>MongoDB</span>
+              <span>Next.js</span>
+              <span>React</span>
+              <span>Tailwind CSS</span>
+            </div>
+            <a href="https://devpost.com/software/ethicscope" class="project-link" target="_blank">
+              View Project <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+          <div class="project-card fade-in-up" style="animation-delay: 0.2s">
+            <div class="project-badge winner-badge">
+              <i class="fa-solid fa-trophy"></i>
+              Winner • SF Hacks 2025
+            </div>
+            <div class="project-icon">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <h2>AIVue: Control with Vision</h2>
+            <p class="project-role">Team Lead & Developer • March 2025 - Present</p>
+            <p class="project-description">
+              Developed a hands-free computer interface using eye/head tracking, blink detection, and speech-to-text commands for accessibility. Built with Python, MediaPipe, OpenCV, PyQt6, PyAutoGUI, Vosk, and MongoDB Atlas; applied Kalman filters and agentic AI.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>MediaPipe</span>
+              <span>OpenCV</span>
+              <span>PyQt6</span>
+              <span>MongoDB</span>
+            </div>
+            <a href="https://devpost.com/software/aivue-control-with-vision" class="project-link" target="_blank">
+              View Project <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+          <div class="project-card fade-in-up" style="animation-delay: 0.3s">
+            <div class="project-badge">AI4ALL Research</div>
+            <div class="project-icon">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h2>AI Tumor Detection ML Model</h2>
+            <p class="project-role">Undergraduate ML Researcher • January 2024 - Present</p>
+            <p class="project-description">
+              Led development of a VGG-16 model for tumor detection in brain MRI scans, enhancing early healthcare detection. Collaborated with interdisciplinary teams to integrate the model into medical diagnostic systems, improving diagnostic accuracy and patient outcomes.
+            </p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>Keras</span>
+              <span>NumPy</span>
+              <span>Scikit-learn</span>
+            </div>
+            <a href="#" class="project-link">
+              Learn More <i class="fa-solid fa-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------Experience---------------->
+    <div id="experience">
+      <div class="container">
+        <h1 class="sub-title fade-in">
+          <span class="section-number">03.</span> Experience
+        </h1>
+        <div class="experience-timeline">
+          <div class="experience-item fade-in-up" style="animation-delay: 0.1s">
+            <div class="experience-date">Aug 2025 – Present</div>
+            <div class="experience-content">
+              <h3>Undergraduate Researcher</h3>
+              <h4>PADSYS LAB — Merced, CA</h4>
+              <ul>
+                <li>Conducting research in parallel and distributed systems, contributing to cutting-edge computational solutions</li>
+                <li>Collaborating with faculty and graduate students on advanced research projects</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item fade-in-up" style="animation-delay: 0.15s">
+            <div class="experience-date">Aug 2025 – Present</div>
+            <div class="experience-content">
+              <h3>Weather Station Researcher</h3>
+              <h4>MERT, UC Merced — Merced, CA</h4>
+              <ul>
+                <li>Working on the CH4HgDRONE project, developing innovative solutions for environmental monitoring</li>
+                <li>Researching and implementing weather station technologies for data collection and analysis</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item fade-in-up" style="animation-delay: 0.2s">
+            <div class="experience-date">Jan 2024 – Mar 2025</div>
+            <div class="experience-content">
+              <h3>Undergraduate Research Intern</h3>
+              <h4>AI4ALL — San Francisco, CA</h4>
+              <ul>
+                <li>Developed a predictive model for medical imaging and brain tumor detection, enhancing accuracy through collaboration on machine learning and neural networks</li>
+                <li>Gained professional project experience and expanded networking opportunities while exploring AI ethics, biases, and fair AI use</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-item fade-in-up" style="animation-delay: 0.25s">
+            <div class="experience-date">Jul 2024 – Jan 2025</div>
+            <div class="experience-content">
+              <h3>Web3 Security Data Analytics Intern</h3>
+              <h4>Webacy — San Francisco, CA</h4>
+              <ul>
+                <li>Analyzed blockchain transaction patterns for fraud detection and developed machine learning models for smart contract risk assessment</li>
+                <li>Participated in workshops on DeFi security and blockchain vulnerability, gaining insights into Web3 security challenges</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------contact---------------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left fade-in-left">
+            <h1 class="sub-title">
+              <span class="section-number">04.</span> Contact Me</h1>
+            <p><i class="fas fa-paper-plane"></i> amirkhabaza@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i> (650)-353-8009</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=100008708173010"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://x.com/Amir_Khabaza"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="https://www.instagram.com/amir.khabaza"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/amirkhabaza"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+            <a href="images/Amir Khabaza_Resume.pdf" download class="btn btn2"
+              >Download CV</a
+            >
+          </div>
+          <div class="contact-right fade-in-right">
+            <form id="contact-form" class="contact-form">
+              <input type="text" id="name" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              />
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit" class="btn btn2" id="submit-btn">
+                <span id="btn-text">Submit</span>
+                <span id="btn-spinner" class="spinner"></span>
+              </button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          Copyright © Amir. Made with <i class="fa-solid fa-heart"></i> by
+          Mohammed A Khabaza
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Scroll Progress Indicator
+      window.addEventListener("scroll", () => {
+        const scrollProgress = document.querySelector(".scroll-progress");
+        const scrollTop = window.pageYOffset;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + "%";
+      });
+
+      // Scroll Animation Observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe all fade-in elements
+      document.querySelectorAll(".fade-in, .fade-in-up, .fade-in-left, .fade-in-right").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Active Navigation Link
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section, #header, #about, #projects, #experience, #contact");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Tab switching
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+
+      // Animated Mesh Gradient Background
+      const meshCanvas = document.getElementById("mesh-gradient");
+      if (meshCanvas) {
+        const meshCtx = meshCanvas.getContext("2d");
+        meshCanvas.width = window.innerWidth;
+        meshCanvas.height = window.innerHeight;
+        meshCanvas.style.position = "fixed";
+        meshCanvas.style.top = "0";
+        meshCanvas.style.left = "0";
+        meshCanvas.style.width = "100%";
+        meshCanvas.style.height = "100%";
+        meshCanvas.style.zIndex = "-2";
+        meshCanvas.style.pointerEvents = "none";
+
+        const points = [];
+        const pointCount = 6;
+        let time = 0;
+
+        // Create control points for mesh gradient
+        for (let i = 0; i < pointCount; i++) {
+          points.push({
+            x: Math.random() * meshCanvas.width,
+            y: Math.random() * meshCanvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            color: [
+              Math.random() * 255,
+              Math.random() * 255,
+              Math.random() * 255
+            ]
+          });
+        }
+
+        function updateMesh() {
+          time += 0.01;
+          points.forEach((point, i) => {
+            point.x += point.vx;
+            point.y += point.vy;
+
+            if (point.x < 0 || point.x > meshCanvas.width) point.vx *= -1;
+            if (point.y < 0 || point.y > meshCanvas.height) point.vy *= -1;
+
+            // Update colors smoothly
+            point.color[0] = 0 + Math.sin(time + i) * 100;
+            point.color[1] = 122 + Math.cos(time + i * 0.5) * 100;
+            point.color[2] = 255 + Math.sin(time * 0.7 + i) * 50;
+          });
+        }
+
+        function drawMesh() {
+          meshCtx.clearRect(0, 0, meshCanvas.width, meshCanvas.height);
+          
+          // Create gradient mesh
+          const gradient = meshCtx.createRadialGradient(
+            meshCanvas.width / 2,
+            meshCanvas.height / 2,
+            0,
+            meshCanvas.width / 2,
+            meshCanvas.height / 2,
+            Math.max(meshCanvas.width, meshCanvas.height)
+          );
+
+          gradient.addColorStop(0, "rgba(99, 102, 241, 0.2)");
+          gradient.addColorStop(0.3, "rgba(139, 92, 246, 0.15)");
+          gradient.addColorStop(0.6, "rgba(6, 182, 212, 0.12)");
+          gradient.addColorStop(1, "rgba(236, 72, 153, 0.08)");
+
+          meshCtx.fillStyle = gradient;
+          meshCtx.fillRect(0, 0, meshCanvas.width, meshCanvas.height);
+
+          // Draw connecting lines between points
+          meshCtx.strokeStyle = "rgba(99, 102, 241, 0.15)";
+          meshCtx.lineWidth = 1;
+          for (let i = 0; i < points.length; i++) {
+            for (let j = i + 1; j < points.length; j++) {
+              const dx = points[i].x - points[j].x;
+              const dy = points[i].y - points[j].y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              if (distance < 300) {
+                meshCtx.globalAlpha = (300 - distance) / 300 * 0.3;
+                meshCtx.beginPath();
+                meshCtx.moveTo(points[i].x, points[i].y);
+                meshCtx.lineTo(points[j].x, points[j].y);
+                meshCtx.stroke();
+              }
+            }
+          }
+          meshCtx.globalAlpha = 1;
+        }
+
+        function animateMesh() {
+          updateMesh();
+          drawMesh();
+          requestAnimationFrame(animateMesh);
+        }
+
+        animateMesh();
+
+        window.addEventListener("resize", () => {
+          meshCanvas.width = window.innerWidth;
+          meshCanvas.height = window.innerHeight;
+        });
+      }
+
+      // Floating Particles Animation
+      const canvas = document.getElementById("particles-canvas");
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 80;
+
+        class Particle {
+          constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 0.8 - 0.4;
+            this.speedY = Math.random() * 0.8 - 0.4;
+            this.opacity = Math.random() * 0.6 + 0.2;
+            const colors = [
+              `rgba(99, 102, 241, ${this.opacity})`,
+              `rgba(139, 92, 246, ${this.opacity})`,
+              `rgba(236, 72, 153, ${this.opacity})`,
+              `rgba(6, 182, 212, ${this.opacity})`
+            ];
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+          }
+
+          update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x > canvas.width) this.x = 0;
+            if (this.x < 0) this.x = canvas.width;
+            if (this.y > canvas.height) this.y = 0;
+            if (this.y < 0) this.y = canvas.height;
+          }
+
+          draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Add glow effect
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach((particle) => {
+            particle.update();
+            particle.draw();
+          });
+          requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener("resize", () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+      }
+
+      // Typing Animation
+      const typingText = document.querySelector(".typing-text");
+      if (typingText) {
+        const text = typingText.textContent;
+        typingText.textContent = "";
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            typingText.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, 100);
+          }
+        }
+        setTimeout(type, 500);
+      }
+
+      // Animated Counter for Stats
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute("data-target"));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current < target) {
+            element.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            element.textContent = target;
+          }
+        };
+
+        updateCounter();
+      }
+
+      // Observe stats for animation
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll(".stat-number");
+            statNumbers.forEach((stat) => {
+              if (!stat.classList.contains("animated")) {
+                stat.classList.add("animated");
+                animateCounter(stat);
+              }
+            });
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const quickStats = document.querySelector(".quick-stats");
+      if (quickStats) {
+        statsObserver.observe(quickStats);
+      }
+
+      // Parallax effect for header
+      let lastScroll = 0;
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        const header = document.getElementById("header");
+        if (header && currentScroll < window.innerHeight) {
+          header.style.transform = `translateY(${currentScroll * 0.3}px)`;
+          header.style.opacity = 1 - currentScroll / window.innerHeight;
+        }
+      });
+
+      // Mouse follower effect for project cards
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+          
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+        });
+        
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "";
+        });
+      });
+
+      // Three.js Interactive 3D Scene
+      const threeContainer = document.getElementById("threejs-container");
+      if (threeContainer && typeof THREE !== "undefined") {
+        let scene, camera, renderer, particles, mouseX = 0, mouseY = 0;
+        let windowHalfX = window.innerWidth / 2;
+        let windowHalfY = window.innerHeight / 2;
+
+        function initThreeJS() {
+          // Create scene
+          scene = new THREE.Scene();
+          
+          // Create camera
+          camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            1,
+            1000
+          );
+          camera.position.z = 500;
+
+          // Create renderer
+          renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true
+          });
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          renderer.setPixelRatio(window.devicePixelRatio);
+          threeContainer.appendChild(renderer.domElement);
+
+          // Create particles (reduced on mobile for performance)
+          const particleCount = window.innerWidth < 768 ? 800 : 2000;
+          const geometry = new THREE.BufferGeometry();
+          const positions = new Float32Array(particleCount * 3);
+          const colors = new Float32Array(particleCount * 3);
+
+          const color1 = new THREE.Color(0x6366F1); // Indigo
+          const color2 = new THREE.Color(0x8B5CF6); // Purple
+          const color3 = new THREE.Color(0xEC4899); // Pink
+          const color4 = new THREE.Color(0x06B6D4); // Cyan
+
+          for (let i = 0; i < particleCount * 3; i += 3) {
+            positions[i] = (Math.random() - 0.5) * 2000;
+            positions[i + 1] = (Math.random() - 0.5) * 2000;
+            positions[i + 2] = (Math.random() - 0.5) * 2000;
+
+            const colorChoice = Math.random();
+            let color;
+            if (colorChoice < 0.25) color = color1;
+            else if (colorChoice < 0.5) color = color2;
+            else if (colorChoice < 0.75) color = color3;
+            else color = color4;
+
+            colors[i] = color.r;
+            colors[i + 1] = color.g;
+            colors[i + 2] = color.b;
+          }
+
+          geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+          geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+
+          const material = new THREE.PointsMaterial({
+            size: 3,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+          });
+
+          particles = new THREE.Points(geometry, material);
+          scene.add(particles);
+
+          // Add interactive 3D shapes (fewer on mobile)
+          const shapes = [];
+          const shapeCount = window.innerWidth < 768 ? 3 : 5;
+          const shapeGeometry = new THREE.IcosahedronGeometry(30, 0);
+          
+          for (let i = 0; i < shapeCount; i++) {
+            const shapeMaterial = new THREE.MeshStandardMaterial({
+              color: [0x6366F1, 0x8B5CF6, 0xEC4899, 0x06B6D4, 0xF59E0B][i],
+              metalness: 0.7,
+              roughness: 0.3,
+              transparent: true,
+              opacity: 0.6
+            });
+            
+            const shape = new THREE.Mesh(shapeGeometry, shapeMaterial);
+            shape.position.x = (Math.random() - 0.5) * 400;
+            shape.position.y = (Math.random() - 0.5) * 400;
+            shape.position.z = (Math.random() - 0.5) * 400;
+            shape.rotation.x = Math.random() * Math.PI;
+            shape.rotation.y = Math.random() * Math.PI;
+            shapes.push(shape);
+            scene.add(shape);
+          }
+
+          // Add lights
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+          scene.add(ambientLight);
+
+          const pointLight1 = new THREE.PointLight(0x6366F1, 1, 1000);
+          pointLight1.position.set(200, 200, 200);
+          scene.add(pointLight1);
+
+          const pointLight2 = new THREE.PointLight(0xEC4899, 1, 1000);
+          pointLight2.position.set(-200, -200, -200);
+          scene.add(pointLight2);
+
+          // Mouse movement
+          document.addEventListener("mousemove", onDocumentMouseMove);
+          window.addEventListener("resize", onWindowResize);
+
+          function onDocumentMouseMove(event) {
+            mouseX = (event.clientX - windowHalfX) * 0.1;
+            mouseY = (event.clientY - windowHalfY) * 0.1;
+          }
+
+          function onWindowResize() {
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+          }
+
+          // Animation loop
+          function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate particles
+            particles.rotation.x += 0.0005;
+            particles.rotation.y += 0.001;
+
+            // Rotate and move shapes
+            shapes.forEach((shape, i) => {
+              shape.rotation.x += 0.01;
+              shape.rotation.y += 0.01;
+              shape.position.x += Math.sin(Date.now() * 0.001 + i) * 0.5;
+              shape.position.y += Math.cos(Date.now() * 0.001 + i) * 0.5;
+            });
+
+            // Camera follows mouse
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+          }
+
+          animate();
+        }
+
+        // Initialize when page loads
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initThreeJS);
+        } else {
+          initThreeJS();
+        }
+      }
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+    <script>
+      // Initialize EmailJS
+      (function() {
+        emailjs.init("PRiuLWtu_avXDy0WM");
+      })();
+
+      const form = document.getElementById("contact-form");
+      const msg = document.getElementById("msg");
+      const submitBtn = document.getElementById("submit-btn");
+      const btnText = document.getElementById("btn-text");
+      const btnSpinner = document.getElementById("btn-spinner");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the form from submitting immediately
+
+        // Disable the button and show the spinner
+        submitBtn.disabled = true;
+        btnText.textContent = "Sending...";
+        btnSpinner.classList.add("active");
+        msg.innerHTML = ""; // Clear previous messages
+
+        // Validate the form fields
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (name === "" || email === "" || message === "") {
+          msg.innerHTML = "Please fill out all fields.";
+          msg.style.color = "#FF3B30";
+          msg.style.borderLeftColor = "#FF3B30";
+          submitBtn.disabled = false;
+          btnText.textContent = "Submit";
+          btnSpinner.classList.remove("active");
+          return;
+        }
+
+        // EmailJS service parameters
+        const serviceID = "service_ceaisp5";
+        const templateID = "template_vy9w1vk";
+        const publicKey = "PRiuLWtu_avXDy0WM";
+
+        // Prepare email parameters
+        const templateParams = {
+          from_name: name,
+          from_email: email,
+          message: message,
+          to_email: "amirkhabaza@gmail.com",
+        };
+
+        // Send email using EmailJS
+        emailjs
+          .send(serviceID, templateID, templateParams, publicKey)
+          .then(
+            function (response) {
+              msg.innerHTML = "Message sent successfully! I'll get back to you soon.";
+              msg.style.color = "#34C759";
+              msg.style.borderLeftColor = "#34C759";
+              form.reset(); // Clear the form after submission
+            },
+            function (error) {
+              console.error("EmailJS Error:", error);
+              msg.innerHTML = "Sorry, there was an error sending your message. Please try again or email me directly at amirkhabaza@gmail.com";
+              msg.style.color = "#FF3B30";
+              msg.style.borderLeftColor = "#FF3B30";
+            }
+          )
+          .finally(() => {
+            // Re-enable the button and hide the spinner
+            submitBtn.disabled = false;
+            btnText.textContent = "Submit";
+            btnSpinner.classList.remove("active");
+          });
+      });
+    </script>
+  </body>
 </html>
